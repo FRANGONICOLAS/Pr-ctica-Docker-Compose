@@ -1,0 +1,15 @@
+services:
+
+  vsftpd:
+
+    image: fauria/vsftpd
+    environment: 
+
+      - FTP_USER=prueba
+      - FTP_PASS=nico
+      - PASV_ADDRESS=192.168.57.3
+    volumes:
+      - /home/vagrant/ftp:/home/vsftpd
+    expose:
+      - 21
+    network_mode: host
